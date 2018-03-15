@@ -20,7 +20,7 @@ describe('xfmr', () => {
             let info = xfmr.getInfo(pkg)
 
             assert(_.isObject(info))
-            assert.equal(info.title, 'sails-swagger')
+            assert.equal(info.title, 'sails-swagger-alino')
             assert(_.isObject(info.contact))
             assert(_.isString(info.version))
         })
