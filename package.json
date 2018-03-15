@@ -4,7 +4,7 @@
   "description": "swagger.io integration for sails.js",
   "main": "dist/api/hooks/swagger/index.js",
   "scripts": {
-    "test": "gulp test && mocha --reporter spec --compilers js:babel/register",
+    "test": "gulp test && mocha --reporter spec --compilers js:babel/register && gulp clean",
     "prepublish": "gulp"
   },
   "repository": {

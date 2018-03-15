@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var babel = require('gulp-babel');
 var del = require('del');
-var runSequence = require('run-sequence');
 
 var testFiles = [
   'api/controllers/ContactController.js',
@@ -24,16 +23,7 @@ gulp.task('default', function () {
     .pipe(gulp.dest('dist/config'));
 });
 
-gulp.task('test', function (done) {
-  runSequence('generateTestFiles', function() {
-    setTimeout(function() {
-      gulp.start('clean');
-      done();
-    }, 500);
-  });
-});
-
-gulp.task('generateTestFiles', function () {
+gulp.task('test', function () {
   gulp.src([ 'lib/**' ])
     .pipe(babel())
     .pipe(gulp.dest('dist/lib'));
