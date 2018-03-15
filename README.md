@@ -135,8 +135,8 @@ MIT
 [sails-url]: http://sailsjs.org
 [npm-image]: https://img.shields.io/npm/v/sails-swagger.svg?style=flat
 [npm-url]: https://npmjs.org/package/sails-swagger
-[ci-image]: https://img.shields.io/travis/langateam/sails-swagger/master.svg?style=flat
-[ci-url]: https://travis-ci.org/langateam/sails-swagger
+[ci-image]: https://img.shields.io/travis/Alino/sails-swagger/master.svg?style=flat
+[ci-url]: https://travis-ci.org/Alino/sails-swagger
 [daviddm-image]: http://img.shields.io/david/langateam/sails-swagger.svg?style=flat
 [daviddm-url]: https://david-dm.org/langateam/sails-swagger
 [codeclimate-image]: https://img.shields.io/codeclimate/github/langateam/sails-swagger.svg?style=flat
