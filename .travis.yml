@@ -1,11 +1,11 @@
 language: node_js
 node_js:
-  - 'node'
-
+- node
 sudo: false
-
 deploy:
+  provider: npm
+  email: alino.sadovsky@gmail.com
+  api_key:
+    secure: J4BN2HQwVLoppXy/XvARnw9AoIaEFpK/0o4hrc92kIZ3yg2vgiOzPeKJmIBeAtSFXHDNZesFH0nXnLdEOsmm96Q8lVdxgjU84wugAxbQegQfZEElNLQANBSWChSyZtGjs/MXjSp0QI/Ekt3u3ux4/QeQ7zfdd7PeYu4sHPULHrfu3UjN0XpFU0bELb1y64ZA/NnrltYCTP09i5WU/C70lKkA6VYYszAtpm91PeC5hXZCDHTkgs/4FdUD+S0ds7rBPMzz5AOi8+N+sEs+CisC8QFwUoGwemDmDhoi+U9McjxNmula3B55CZsAGBBjRL2xMAX0OfU5GDmL4SUb9EVhffVBW5wPYBpTIc4/J9EWa10dY448iNhlANI0V+J87AUaBs6+u6Uwvpp2Y8lpvXKghBZvWVYaBRMrV5WGVu85QisT6kaVPcogB3YE0NPOry/2kG+g3u67fl+dBID11tjfrhqmMf+3dxsVaVPbJv4JO922O6jeTR7HOCJ5Qv45fz+8Wx1SqQ/8zEHcQrwPgNKwW0NT2IwV50YaFdg8mi83qL2ZrXyRXXgsYlUNKst3t9TmvZVxRHWXvxTd94k+QPe6rdySYyjcuKRo0Tn/bg3SHrnwQGoAmVCFy/O3K6tubgDvni0KNiuDbmE61dygMPgI3tOVj+QPMuhnkv4mJ2/prF4=
   on:
-    tags: true
     repo: Alino/sails-swagger
-    all_branches: true
