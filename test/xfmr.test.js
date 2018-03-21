@@ -185,6 +185,26 @@ describe('xfmr', () => {
         })
     })
 
+    describe('#getDefinitionsFromSwaggerConfig', () => {
+        before(() => {
+            sails.config.swagger = {
+                definitions: {
+                    users: {
+                        type: "array",
+                        items: {
+                            "$ref": "#/definitions/user"
+                        }
+                    }
+                }
+            }
+        })
+
+        it('should get definitions from swagger config', () => {
+            const definitions = xfmr.getDefinitionsFromSwaggerConfig(sails);
+            assert.deepEqual(definitions, sails.config.swagger.definitions);
+        })
+    })
+
     describe('#getDefinitionsFromRouteConfig()', () => {
         before(() => {
             sails.config.routes = _.extend(sails.config.routes, {
