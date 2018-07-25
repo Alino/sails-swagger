@@ -172,6 +172,27 @@ describe('xfmr', () => {
         })
     })
 
+    describe('#getDefinitionProperties()', () => {
+        it('should correctly map sails.js attributes to swagger definitions', () => {
+            const definition = {
+                name: {
+                    type: "string",
+                    description: "name of the Object"
+                }
+            }
+            const expectedValue = {
+                name: {
+                    type: "string",
+                    description: "name of the Object",
+                    format: "string"
+                }
+            }
+            
+            const actualValue = xfmr.getDefinitionProperties(definition)
+            assert.deepEqual(expectedValue, actualValue)
+        });
+    })
+
     describe('#getDefinitionReferenceFromPath()', () => {
         it('should generate a Swagger $ref from a simple path /contact', () => {
             assert.equal('#/definitions/contact', xfmr.getDefinitionReferenceFromPath(sails, '/contact'))
