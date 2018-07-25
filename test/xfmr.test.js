@@ -153,7 +153,7 @@ describe('xfmr', () => {
             let swaggerDefinitions = xfmr.getDefinitions(sails);
 
             assert(_.isObject(swaggerDefinitions.contact))
-            assert.deepEqual({ '$ref': '#/definitions/group' }, swaggerDefinitions.contact.properties.group)
+            assert.deepEqual(swaggerDefinitions.contact.properties.group, { '$ref': '#/definitions/group' })
         })
 
         context('populate turned off', () => {
@@ -164,7 +164,7 @@ describe('xfmr', () => {
                 let swaggerDefinitions = xfmr.getDefinitions(sails);
 
                 assert(_.isObject(swaggerDefinitions.contact))
-                assert.deepEqual({ type: 'integer', format: 'int32' }, swaggerDefinitions.contact.properties.group)
+                assert.deepEqual(swaggerDefinitions.contact.properties.group, { type: 'integer', format: 'int32' })
             })
             after(() => {
                 sails.config.blueprints.populate = true
@@ -177,19 +177,21 @@ describe('xfmr', () => {
             const definition = {
                 name: {
                     type: "string",
-                    description: "name of the Object"
+                    description: "name of the Object",
+                    enum: ['Donald', 'Barack', 'Adolf']
                 }
             }
             const expectedValue = {
                 name: {
                     type: "string",
+                    format: "string",
                     description: "name of the Object",
-                    format: "string"
+                    enum: ['Donald', 'Barack', 'Adolf']
                 }
             }
             
             const actualValue = xfmr.getDefinitionProperties(definition)
-            assert.deepEqual(expectedValue, actualValue)
+            assert.deepEqual(actualValue, expectedValue)
         });
     })
 
@@ -333,7 +335,7 @@ describe('xfmr', () => {
                 }
             };
 
-            assert.equal(true, _.isEqual(results, expectedSwaggerSpec));
+            assert.deepEqual(results, expectedSwaggerSpec);
 
         })
 
