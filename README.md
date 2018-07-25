@@ -130,5 +130,5 @@ MIT
 
 
 [npm-url]: https://npmjs.org/package/sails-swagger
-[ci-image]: https://img.shields.io/travis/Alino/sails-swagger/master.svg?style=flat
+[ci-image]: https://travis-ci.org/Alino/sails-swagger.svg?branch=master
 [ci-url]: https://travis-ci.org/Alino/sails-swagger
