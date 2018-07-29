@@ -173,12 +173,22 @@ describe('xfmr', () => {
     })
 
     describe('#getDefinitionProperties()', () => {
-        it('should correctly map sails.js attributes to swagger definitions', () => {
+        it('should correctly map sails.js attributes to swagger 2.0 definitions', () => {
             const definition = {
                 name: {
                     type: "string",
                     description: "name of the Object",
-                    enum: ['Donald', 'Barack', 'Adolf']
+                    enum: ['Donald', 'Barack', 'Adolf'],
+                    defaultsTo: 'Adolf'
+                },
+                lastName: {
+                    type: "string",
+                    required: true,
+                    example: 'Tiso'
+                },
+                presidents: {
+                    collection: 'president',
+                    via: 'presidentId'
                 }
             }
             const expectedValue = {
@@ -186,7 +196,20 @@ describe('xfmr', () => {
                     type: "string",
                     format: "string",
                     description: "name of the Object",
-                    enum: ['Donald', 'Barack', 'Adolf']
+                    enum: ['Donald', 'Barack', 'Adolf'],
+                    default: 'Adolf'
+                },
+                lastName: {
+                    type: "string",
+                    format: "string",
+                    required: true,
+                    example: 'Tiso'
+                },
+                presidents: {
+                    type: "array",
+                    items: {
+                        $ref: "#/definitions/president"
+                    }
                 }
             }
             
