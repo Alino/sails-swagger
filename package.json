@@ -1,6 +1,6 @@
 {
   "name": "sails-swagger-alino",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "swagger.io integration for sails.js",
   "main": "dist/api/hooks/swagger/index.js",
   "scripts": {

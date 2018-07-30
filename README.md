@@ -24,7 +24,8 @@ module.exports.swagger = {
   },
   definitions: {
       // your optional additional custom #/definitions
-  }
+  },
+  ignoredRoutes: [] // routes that should not be picked into swagger file
 };
 ```
 

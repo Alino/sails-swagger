@@ -306,7 +306,32 @@ describe('xfmr', () => {
                         }, 'Contact']
 
                     }
+                },
+                'get /items/:id': {
+                    controller: 'ItemController',
+                    action: 'test',
+                    swagger: {
+                        methods: ['GET', 'POST', 'DELETE']
+                    }
+                },
+                'post /items/:id': {
+                    controller: 'ItemController',
+                    action: 'test'
+                },
+                'delete /items/:id': {
+                    controller: 'ItemController',
+                    action: 'test'
+                },
+                'get /tests': {
+                    controller: 'TestController',
+                    action: 'test',
+                    swagger: {
+                        methods: ['GET']
+                    }
                 }
+            })
+            sails.config.swagger = _.extend(sails.config.routes, {
+                ignoredRoutes: ['/items/{id}', '/tests']
             })
         })
 
